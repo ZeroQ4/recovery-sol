@@ -27,13 +27,6 @@ A simple Next.js (App Router) based Solana dApp that allows users to recover SOL
    ```
    Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Testing on Devnet
-
-To test the application on Devnet, you can use the following test accounts:
-- **Mint Account**: `BcjbvoHqDxuq34QZQpVojewK7xcvi8bQtsmi6LS827yz`
-- **Mint Authority**: `MxXYGT3gSA5Bi9N4EDXvQ4oftMX8PBoKFYKYXWMxYHj`
-
-*Note: You will need to import the test authority's private key into your Phantom or Solflare wallet (set to Devnet) to actually perform the withdrawal.*
 
 ## Deployment on Vercel
 
