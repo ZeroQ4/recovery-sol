@@ -2,7 +2,7 @@
 
 import { kv } from "@vercel/kv";
 
-export async function logWithdrawal(pubkey: string, amountSol: number, signature: string) {
+export async function logWithdrawal(_pubkey: string, amountSol: number, _signature: string) {
   try {
     if (!process.env.KV_REST_API_URL) return;
     // INCRBYFLOAT handles decimal addition
@@ -17,7 +17,7 @@ export async function getTotalRecoveredSol(): Promise<number> {
     if (!process.env.KV_REST_API_URL) return 0;
     const total = await kv.get<number>("total_recovered_sol");
     return total || 0;
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error("Failed to read KV store for total:", err);
     return 0;
   }
