@@ -180,7 +180,7 @@ export function LostLamportsApp({ initialTotalRecovered = 0 }: { initialTotalRec
       await connection.confirmTransaction(signature, "confirmed");
       
       // Log to file on server
-      await logWithdrawal(publicKey.toBase58(), excessLamports / 1e9, signature);
+      await logWithdrawal(excessLamports / 1e9);
       
       const clusterQuery = network === "devnet" ? "?cluster=devnet" : "";
       const explorerLink = `https://solscan.io/tx/${signature}${clusterQuery}`;

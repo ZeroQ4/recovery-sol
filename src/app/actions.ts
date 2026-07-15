@@ -2,7 +2,7 @@
 
 import { kv } from "@vercel/kv";
 
-export async function logWithdrawal(_pubkey: string, amountSol: number, _signature: string) {
+export async function logWithdrawal(amountSol: number) {
   try {
     if (!process.env.KV_REST_API_URL) return;
     // INCRBYFLOAT handles decimal addition
