@@ -192,9 +192,9 @@ export function LostLamportsApp({ initialTotalRecovered = 0 }: { initialTotalRec
         { id: Math.random().toString(36).substr(2, 9), type: "success", message: `Link|${explorerLink}` }
       ]);
       
-      addLog("success", `Done! ${(excessLamports / 1e9).toFixed(9)} SOL recovered.`);
+      addLog("success", `Done! ${(excessLamports / 1e9).toFixed(4)} SOL recovered.`);
       
-      setTotalRecovered((prev) => prev + (excessLamports / 1e9));
+      setTotalRecovered((prev) => Number(prev) + (excessLamports / 1e9));
       setExcessLamports(0); // reset excess visually
     } catch (err) {
       addLog("error", err instanceof Error ? err.message : "Failed to withdraw");
@@ -219,12 +219,12 @@ export function LostLamportsApp({ initialTotalRecovered = 0 }: { initialTotalRec
               Just paste your mint address, connect your Mint Authority wallet, and recover your lost Solana funds.
             </p>
           </div>
-          {totalRecovered > 0 && (
+          {Number(totalRecovered) > 0 && (
             <div className="flex justify-center">
               <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
                 <CheckCircle2 className="h-4 w-4" />
                 <span>
-                  Total Recovered: <strong>{totalRecovered.toLocaleString('en-US', { maximumFractionDigits: 4 })} SOL</strong>
+                  Total Recovered: <strong>{Number(totalRecovered).toLocaleString('en-US', { maximumFractionDigits: 4 })} SOL</strong>
                 </span>
               </div>
             </div>

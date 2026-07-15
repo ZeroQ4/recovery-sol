@@ -20,8 +20,8 @@ export async function logWithdrawal(amountSol: number) {
 export async function getTotalRecoveredSol(): Promise<number> {
   try {
     if (!process.env.KV_REST_API_URL && !process.env.UPSTASH_REDIS_REST_URL) return 0;
-    const total = await redis.get<number>("total_recovered_sol");
-    return total || 0;
+    const total = await redis.get("total_recovered_sol");
+    return Number(total) || 0;
   } catch (err: unknown) {
     console.error("Failed to read KV store for total:", err);
     return 0;
