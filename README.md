@@ -27,12 +27,3 @@ A simple Next.js (App Router) based Solana dApp that allows users to recover SOL
    ```
    Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-
-## Deployment on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new).
-1. Push your code to a GitHub repository.
-2. Import the project in Vercel.
-3. Make sure the root directory is correctly set (e.g., `lost-lamports-app`) if you have a monorepo setup.
-4. Add any environment variables (e.g., `NEXT_PUBLIC_DEVNET_RPC_URL`) in the Vercel dashboard.
-5. Deploy.
